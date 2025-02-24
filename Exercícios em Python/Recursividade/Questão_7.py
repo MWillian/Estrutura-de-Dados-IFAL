@@ -8,5 +8,6 @@ def FatorialDuplo(n):
     if n == 1:
         return 1
     if n % 2 == 1:
+        print
         return n * FatorialDuplo(n-2)
 print(FatorialDuplo(5))
