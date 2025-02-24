@@ -10,4 +10,4 @@ def Palíndroma (string):
             return Palíndroma(string[1:-1])
         else:
             return "A palavra não é palíndroma"
-print(Palíndroma("ararab"))
+print(Palíndroma("arara"))
