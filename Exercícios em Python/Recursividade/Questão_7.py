@@ -7,7 +7,8 @@ def FatorialDuplo(n):
         return False
     if n == 1:
         return 1
-    if n % 2 == 1:
-        print
+    if n % 2 != 0:
         return n * FatorialDuplo(n-2)
-print(FatorialDuplo(5))
+    else:
+        return(FatorialDuplo(n-1))
+print(FatorialDuplo(8))

@@ -4,8 +4,9 @@ valor = 7
 
 def OrdemCrescente(numero):
     if numero < 0:
-        return "valor negativo"
+        return 
     else:
         OrdemCrescente(numero - 1)
-        return print(numero) 
-print(OrdemCrescente(valor))
+        print(numero) 
+        return 
+OrdemCrescente(valor)
