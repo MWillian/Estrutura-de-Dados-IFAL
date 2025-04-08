@@ -5,12 +5,14 @@
 
 class FilaArray:
 
-    CAPACIDADE_PADRAO = 5
-
-    def __init__(self):
-        self.dados = [None] * self.CAPACIDADE_PADRAO
+    def __init__(self,capacidade):
+        self.capacidade = capacidade
+        self.dados = [None] * capacidade
         self.tamanho = 0
         self.inicio = 0
+    
+    def filaCheia(self):
+        pass
     
     def __len__(self):
         return self.tamanho
@@ -33,12 +35,15 @@ class FilaArray:
         posicao = self.inicio
         for k in range(self.tamanho):
             self.dados[k] = dados_antigos[posicao]
-            posicao = (1+posicao)%len(dados_antigos)
+            posicao = (posicao+1)%len(dados_antigos)
         self.inicio = 0
 
     def diminui_tamanho (self):
         if 0 < self.tamanho < len(self.dados)//4:
             self.altera_tamanho(len(self.dados)//2)
+
+    def is_full(self):
+        return self.tamanho == self.capacidade
 
     def enqueue(self,e):
         if self.tamanho == len(self.dados):
@@ -48,8 +53,16 @@ class FilaArray:
         self.tamanho += 1
 
     def first(self):
+        if self.is_empty():
+            raise ValueError("A fila está vazia")
         return self.dados[self.inicio]
 
+    def rodar(self):
+        if self.is_full():
+            raise ValueError('A fila está cheia')
+        self.enqueue(self.dequeue())
+
+        
     def __str__(self):
         result = "["
         posicao = self.inicio
