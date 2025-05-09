@@ -39,14 +39,13 @@ class ListaNaoOrdenada:
         if self.head is not None:
             self.head = self.head.getNext()
         else:
-            "A Lista está vazia"
+            print("Não é possível remover Nós, a lista está vazia")
         
     def print_lista(self):
         atual = self.head
-        print("Lista atual:")
+        print("Estado da lista atual:")
         if atual is None:
-            print("vazia")
+            print("Vazia\n")
         while atual is not None:
             print(atual.getData())
             atual = atual.getNext()
-
