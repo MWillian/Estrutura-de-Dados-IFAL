@@ -41,4 +41,14 @@ def HashParaString(uma_string, tamanho_tabela):
 # Colisões irão acontecer quanddo dois itens são associados ao mesmo slot
 # O primeiro método de resolução seria utilizar o open adress e linear probing: se procura sequencialmente o próximo slot disponível
 
+# newhashvalue=rehash(oldhashvalue)
+# rehash(pos)=(pos+1)%sizeoftable.
+
+# quadratic probing:
+# new_position=(original_position+i2)%table_size
+
+
+# chaining:
+# usa uma estrutura de dados dentro de cada célula da tabela para armazenar múltiplos valores que compartilham o mesmo índice.
+
 
